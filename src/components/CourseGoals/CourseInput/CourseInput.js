@@ -11,6 +11,9 @@ const CourseInput = props => {
     if(event.target.value.trim().length>0){
       setIsValid(true);
     }
+    else{
+      setIsValid(false)
+    }
     setEnteredValue(event.target.value);
   };
 
@@ -29,7 +32,7 @@ const CourseInput = props => {
         <label >Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </div>
-      <Button type="submit">Add Goal</Button>
+      <Button className={isValid?'':'invalid'} type="submit">Add Goal</Button>
     </form>
   );
 };
